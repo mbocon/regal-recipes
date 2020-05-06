@@ -10,6 +10,16 @@ class Edit extends React.Component {
             <h1 className='header-h1'>{recipe.name}</h1>
             </div>
             <form action={`/recipes/${recipe._id}?_method=PUT`} method='POST'>
+            <div className="child child-0">
+                    <label htmlFor="category">Category</label>
+                    <div className="radio">
+                        Breakfast<input type="radio" className='' id="breakfast" name="category" value="breakfast"/>
+                        Lunch<input type="radio" className='' id="lunch" name="category" value="lunch"/>
+                        Dinner<input type="radio"  className='' id="dinner" name="category" value="dinner"/>
+                        Dessert<input type="radio" className='' id="dessert" name="category" value="dessert"/>
+                        Other<input type="radio" className='' id="other" name="category" value="other"/>
+                    </div>
+                </div>
                 <div className="child child-1">
                     <label htmlFor="name">Recipe Name</label>
                     <input type="text" id="name" name="name" value={recipe.name} required/>

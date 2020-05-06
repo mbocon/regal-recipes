@@ -1,7 +1,9 @@
 // jQuery onLoad
 $(() => {
 
-    // variable to hold our cards to get the length
+    // CAROUSEL FUNCTIONALITY 
+
+    // variable to hold recipe cards to get the length
     const numOfCards = $('.carousel').children().length - 1;
     // card counter
     let currentCardIndex = 0;
@@ -16,7 +18,6 @@ $(() => {
         $('.carousel').children().eq(currentCardIndex).css('display', 'block');
     })
 
-
     $('.previous').on('click', () => {
         $('.carousel').children().eq(currentCardIndex).css('display', 'none');
 
@@ -29,15 +30,17 @@ $(() => {
         $('.carousel').children().eq(currentCardIndex).css('display', 'block');
 
     })
-
     
-        // $("#search").on("keyup", function() {
-        //     $('.recipe-card').hide();
-        //     var searchTerm = $(this).val().toLowerCase();
-        //      $('.recipe-card').filter(function(){
-        //           return  $(this).find(searchTerm).text().toLowerCase().indexOf(searchTerm) > -1;
-        //     }).show();
-        // });
+    // HANDLING OPTIONS FOR CATEGORY SELECTION
+    $(document).on("click", "input[type='radio']", function(){
+        thisRadio = $(this);
+        if (thisRadio.hasClass("imChecked")) {
+            thisRadio.removeClass("imChecked");
+            thisRadio.prop('checked', false);
+        } else { 
+            thisRadio.prop('checked', true);
+            thisRadio.addClass("imChecked");
+        };
+    })
     
-
 });
