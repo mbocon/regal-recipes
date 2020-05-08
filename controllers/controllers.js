@@ -19,19 +19,27 @@ router.get('/register', (req, res) => {
     res.render('Register')
 })
 
-// router.post('/register', (req, res) => {
-    
-// })
-
+router.post('/register', (req, res) => {
+    Users.create(req.body, (err, newUser) => {
+        err ? console.log(err) : console.log('user added');
+        res.redirect('/recipes/login')
+    })
+})
 
 // user log in route
 router.get('/login', (req, res) => {
     res.render('Login')
 })
 
-// router.post('/login', (req, res) => {
-   
-// })
+router.post('/login', (req, res) => {
+    Users.findOne({email: req.body.email}, (err, foundUser) => {
+        if (foundUser && foundUser.password === req.body.password) {
+            res.redirect('/recipes')
+        }else {
+            res.render('Login', {errorMessage: 'Incorrect Email or Password'})
+        }
+    })
+})
 
 // index route
 router.get('/', (req, res) => {

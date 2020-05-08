@@ -3,11 +3,13 @@ const Default = require('./Default');
 
 class Login extends React.Component {
     render() {
+         const { errorMessage } = this.props;
+         console.log(errorMessage)
+         
         return(
         <Default>
-        
         <h1 className='register-h1'>Login</h1>
-            <form className='register-form' action="/recipes/register" method='POST'>
+            <form className='register-form' action="/recipes/login" method='POST'>
                <div className='register'>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" name='name' required/>
