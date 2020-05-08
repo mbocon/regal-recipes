@@ -1,6 +1,6 @@
 # regal-recipes
 
-Building a simple CRUD application in the form of a recipe 
+Building a simple CRUD application in the form of a recipe app
 
 Technologies used : 
 
