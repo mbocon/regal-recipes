@@ -42,7 +42,6 @@ nav {
   
 .nav-link:hover {
     color: whitesmoke;
-    
 }
 
 .user-link {
@@ -134,9 +133,7 @@ main {
     align-items: center;
     flex-direction: column;
     height: 65%;
-    /* width:100%; */
     padding: 0em 6em;
-    /* background-color: firebrick; */
 }
 
 .area {
@@ -159,9 +156,15 @@ main {
     border-bottom: firebrick 2px solid;
 }
 
+.active {
+    border-bottom: 2px solid #fea201;
+    color: whitesmoke;
+}
+
 .category-link:hover {
     color: whitesmoke;
     text-decoration: none;
+    border-bottom: 2px solid firebrick;
 }
 
 .carousel {
@@ -223,10 +226,6 @@ h3 {
 
 .recipe-card:first-of-type{
     display: block;
-    /* display: flex;
-    justify-content: space-between;
-    height: 90%;
-    text-align: center; */
 }
 
 .card-content {
@@ -246,7 +245,6 @@ h3 {
 .recipe-card img {
     width: 150px;
     height: 150px;
-    /* max-height: 50%; */
 }
 
 h5 {
@@ -266,7 +264,6 @@ h5 {
     font-size: 2em;
 }
 
-
 .card-links {
     display: flex;
     justify-content: space-evenly;
@@ -276,7 +273,6 @@ h5 {
 .card-links > form {
     color: #fea201;
     background-color: whitesmoke;
-    /* padding: .25em; */
     border-radius: 5em;
     border: 1px solid #fea201;
     display: flex;
@@ -340,7 +336,6 @@ footer {
    left: 30%;
    right: 30%;
    bottom: 2%;
-    
 }
 
 #linkedin {
@@ -367,7 +362,6 @@ footer {
 
 form {
     min-height: 50%;
-    /* border: 5px solid green; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -418,7 +412,6 @@ textarea {
 .child-6 button {
     margin: 0 auto;
     width: 35%;
-    /* padding: 1.5em; */
 }
 
 .radio {
@@ -429,6 +422,7 @@ textarea {
 input[type='radio']{
     margin-right: 1em;
 }
+
 /********************************************
 *********** SHOW PAGE STYLING ***************
 *********************************************/
@@ -491,7 +485,7 @@ input[type='radio']{
 }
 
  h4 {
-     text-align: center;
+    text-align: center;
     border-bottom: 4px solid #fea201;
     width: 75%;
     margin: 0 auto;
@@ -538,6 +532,7 @@ input[type='radio']{
     font-size: 1.5em;
     color: firebrick;
 }
+
 /********************************************
 *********** MEDIA QUERIES ****************
 *********************************************/
