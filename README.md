@@ -14,11 +14,11 @@ Technologies used :
 
 Wireframe of application layout :
 
-Index page
+Index page<br>
 <img src="./public/css/img/indexSketch.png" width='450px'><br>
-New page
+New page<br>
 <img src="./public/css/img/newPageSketch.png" width='450px' height='350px'><br>
-Show Page
+Show Page<br>
 <img src="./public/css/img/showPageSketch.png" width='450px' height='350px'><br>
-Edit Page
+Edit Page<br>
 <img src="./public/css/img/editPageSketch.png" width='450px' height='350px'><br>
