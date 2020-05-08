@@ -18,13 +18,18 @@ class Default extends React.Component {
                 </head>
                 <body>
                 <div className="container">
-                <nav>
+                <nav >
                     <a className='nav-link' href="/recipes">Home</a>
+                    <div className="favs">
+                    </div>
+                    <a className='user-link register-link' href="/recipes/register">Register</a>
+                    <a className='user-link login-link' href="/recipes/login">Login</a>
+
                     <form className='searchBar' action="/recipes" method="GET">
-                        <input type="text" name="search" id="searchBar" placeholder="Search for a recipe " />
+                        <input type="text" name="search" id="searchBar" placeholder="Search for a recipe"/>
                         <input type="submit" name="submit" id="submit" value='Search'/>
                      </form>
-                     <ul id="recipeList"></ul>
+                    
                 </nav>
                     {this.props.children}
                     <footer>

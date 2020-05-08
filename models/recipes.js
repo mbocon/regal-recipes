@@ -8,11 +8,12 @@ const recipeSchema = new Schema({
     category: { type: String, required: true},
     description: { type: String, required: true },
     ingredients: {type: String, required: true},
-    directions: {type: String, required: true}
+    directions: {type: String, required: true},
+    favorite: Boolean
 }, { timestamps: true });
 
 //  Create Model from our Schema
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-// Export Fruit Model
+// Export Model
 module.exports = Recipe;

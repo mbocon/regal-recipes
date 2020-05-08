@@ -36,7 +36,7 @@ class Show extends React.Component {
                     </form>
                 </div>
             </div>
-             <a href="/recipes"><button>back</button></a>
+             <a href="/recipes"><button className='back-btn'>back</button></a>
             </Default>
         )
     }
