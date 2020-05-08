@@ -512,7 +512,7 @@ input[type='radio']{
  }
  
  /********************************************
-*********** REGISTER STYLING ****************
+*********** REGISTER/LOGIN STYLING ****************
 *********************************************/
 
 .register-form {
@@ -531,6 +531,12 @@ input[type='radio']{
     margin-bottom: 2em;
     font-size: 1.5em;
     color: firebrick;
+}
+
+.error-message {
+    font-size: 1.5em;
+    color: red;
+    padding: 1em;
 }
 
 /********************************************
