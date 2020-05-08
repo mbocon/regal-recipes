@@ -1,6 +1,6 @@
 # regal-recipes
 
-Building a basic CRUD application.
+Building a simple CRUD application in the form of a recipe 
 
 Technologies used : 
 
@@ -22,3 +22,8 @@ Show Page<br>
 <img src="./public/css/img/showPageSketch.png" width='450px' height='350px'><br>
 Edit Page<br>
 <img src="./public/css/img/editPageSketch.png" width='450px' height='350px'><br>
+
+UNRESOLVED BUGS/ISSUES :
+
+- Need to implement media queries.
+- 
