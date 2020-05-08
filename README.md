@@ -14,5 +14,5 @@ Technologies used :
 
 Wireframe of application layout :
 
-<img src="public/css/img/indexSktech.png" width='450px'><br>
-<img src="public/css/showPageSketch.png" width='450px' height='350px'><br>
+<img src="./public/css/img/indexSketch.png" width='450px'><br>
+<img src="./public/css/img/showPageSketch.png" width='450px' height='350px'><br>
