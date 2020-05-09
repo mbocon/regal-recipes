@@ -2,6 +2,8 @@
 
 Building a simple CRUD application in the form of a recipe app
 
+Link to heroku: https://regal-recipes.herokuapp.com/recipes
+
 Technologies used : 
 
 [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)<br>
