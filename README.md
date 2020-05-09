@@ -26,4 +26,3 @@ Edit Page<br>
 UNRESOLVED BUGS/ISSUES :
 
 - Need to implement media queries.
-- 
