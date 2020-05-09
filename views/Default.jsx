@@ -19,7 +19,7 @@ class Default extends React.Component {
                 <body>
                 <div className="container">
                 <nav >
-                    <a className='nav-link' href="/recipes">Home</a>
+                    <a className='nav-link deactivate' href="/recipes">Home</a>
                     <div className="favs">
                     </div>
                     <a className='user-link register-link' href="/recipes/register">Register</a>

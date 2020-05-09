@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const userSchema = new Schema({
-    name: String,
+    
     username: String,
     email: String,
-    password: String
+    password: String,
+    loggedIn: {type: Boolean, default: false}
 }, { timestamps: true });
 
 //  Create Model from our Schema

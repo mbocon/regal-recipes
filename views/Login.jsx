@@ -1,10 +1,11 @@
 const React = require('react');
 const Default = require('./Default');
 
+
 class Login extends React.Component {
     render() {
          const { errorMessage } = this.props;
-         console.log(errorMessage)
+         console.log(errorMessage, 'is  the errormessage')
          if (errorMessage !== undefined) {
               return (
                <Default>
@@ -30,8 +31,6 @@ class Login extends React.Component {
                </Default>
               )
          } else {
-
-         
         return(
         <Default>
         <h1 className='register-h1'>Login</h1>

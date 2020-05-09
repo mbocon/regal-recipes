@@ -4,6 +4,8 @@ const router = express.Router();
 const Recipe = require('../models/recipes.js');
 const Users = require('../models/users.js')
 
+let count = 0;
+
 /**********************************
  * Presentational Routes (All GET requests)
  * Index: Shows a list of all our resources and has links  to New, Edit, Delete
@@ -12,13 +14,12 @@ const Users = require('../models/users.js')
  * Edit: Shows a form to update a resource linked to update route
  */
 
-let count = 0;
-
 // user registration route
 router.get('/register', (req, res) => {
     res.render('Register')
 })
 
+// handling new user registration
 router.post('/register', (req, res) => {
     Users.create(req.body, (err, newUser) => {
         err ? console.log(err) : console.log('user added');
@@ -31,15 +32,22 @@ router.get('/login', (req, res) => {
     res.render('Login' )
 })
 
+// handling user login request
 router.post('/login', (req, res) => {
     Users.findOne({email: req.body.email}, (err, foundUser) => {
         if (foundUser && foundUser.password === req.body.password) {
+            foundUser.loggedIn = true;
             res.redirect('/recipes')
         }else {
             res.render('Login', {errorMessage: 'Incorrect Email or Password'})
         }
     })
 })
+
+// function to be used for search functionality
+const func = (text) => {
+    return text.replace(/\s*([^[:]+):\"([^"]+)"/g);
+}
 
 // index route
 router.get('/', (req, res) => {
@@ -102,9 +110,9 @@ router.get('/favorites', (req, res) => {
 // breakfast route
 router.get('/breakfast', (req, res) => {
     // Use Recipe model to get all recipes matching breakfast class
-    Recipe.find({category: 'breakfast'}, (err, allRecipes) => {
+    Recipe.find({category: 'breakfast'}, (err, breakfastRecipes) => {
         res.render('Index', {
-            recipes: allRecipes,
+            recipes: breakfastRecipes,
             title: 'Breakfast recipes',
             count: count
         })
@@ -114,21 +122,21 @@ router.get('/breakfast', (req, res) => {
 // lunch route
 router.get('/lunch', (req, res) => {
     // Use Recipe model to get all recipes matching breakfast class
-    Recipe.find({category: 'lunch'}, (err, allRecipes) => {
+    Recipe.find({category: 'lunch'}, (err, lunchRecipes) => {
         res.render('Index', {
-            recipes: allRecipes,
+            recipes: lunchRecipes,
             title: 'Lunch recipes',
             count: count
            })
    });
 })
 
-// breakfast route
+// dinner route
 router.get('/dinner', (req, res) => {
     // Use Recipe model to get all recipes matching breakfast class
-    Recipe.find({category: 'dinner'}, (err, allRecipes) => {
+    Recipe.find({category: 'dinner'}, (err, dinnerRecipes) => {
         res.render('Index', {
-            recipes: allRecipes,
+            recipes: dinnerRecipes,
             title: 'Dinner recipes',
             count: count
            })
@@ -138,9 +146,9 @@ router.get('/dinner', (req, res) => {
 // dessert route
 router.get('/dessert', (req, res) => {
     // Use Recipe model to get all recipes matching breakfast class
-    Recipe.find({category: 'dessert'}, (err, allRecipes) => {
+    Recipe.find({category: 'dessert'}, (err, dessertRecipes) => {
         res.render('Index', {
-            recipes: allRecipes,
+            recipes: dessertRecipes,
             title: 'Dessert recipes',
             count: count
            })
@@ -150,16 +158,14 @@ router.get('/dessert', (req, res) => {
 // other route
 router.get('/other', (req, res) => {
     // Use Recipe model to get all recipes matching breakfast class
-    Recipe.find({category: 'other'}, (err, allRecipes) => {
+    Recipe.find({category: 'other'}, (err, otherRecipes) => {
         res.render('Index', {
-            recipes: allRecipes,
+            recipes: otherRecipes,
             title: 'Other recipes',
             count: count
            })
    });
 })
-
-
 
 // new route
 router.get('/new', (req, res)=>{
@@ -223,12 +229,6 @@ router.put('/:id', (req, res) => {
         res.redirect(`/recipes/${req.params.id}/show`);
     });
 });
-
-
-// function to be used for search functionality
-const func = (text) => {
-    return text.replace(/\s*([^[:]+):\"([^"]+)"/g);
-}
 
 
 // Export Router
