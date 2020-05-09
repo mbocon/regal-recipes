@@ -26,3 +26,5 @@ Edit Page<br>
 UNRESOLVED BUGS/ISSUES :
 
 - Need to implement media queries.
+
+- There is a bug with my add to favorites/remove from favorites functionality.
