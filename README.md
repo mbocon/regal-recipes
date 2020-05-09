@@ -27,4 +27,6 @@ UNRESOLVED BUGS/ISSUES :
 
 - Need to implement media queries.
 
+- Need to implement user log out functionality 
+
 - There is a bug with my add to favorites/remove from favorites functionality.
