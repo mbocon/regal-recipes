@@ -1,9 +1,10 @@
 // Dependencies
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/basiccrud'
 const methodOverride = require('method-override');
 
 
@@ -15,7 +16,7 @@ app.engine('jsx', require('express-react-views').createEngine()); // telling exp
 app.use(express.static('public')); //serve any file in public as a static file
 
 // Mongoose connection
-mongoose.connect('mongodb://localhost:27017/basiccrud', {useNewUrlParser:true, useUnifiedTopology: true});
+mongoose.connect(MONGODB_URI, {useNewUrlParser:true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', () => {
     console.log('Connected to mongoDB');
